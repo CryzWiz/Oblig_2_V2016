@@ -1,7 +1,6 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-
 public class Ansatt extends Kort{
 	private String Navn;
 	private int PIN;
