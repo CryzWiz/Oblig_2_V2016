@@ -11,8 +11,8 @@ public class KortTest {
 		for(int i = 0; i < reg.size(); i++){
 			Kort kort = (Kort)reg.get(i);
 			System.out.println(kort);
-			System.out.println("Test av kort: " + kort.getKortNummer() + ",med kode 1234 er: " + (kort.sjekkPIN(1234) ? " Gyldig" : " Ugyldig"));
-			System.out.println("Test av kort: " + kort.getKortNummer() + ",med kode 9999 er: " + (kort.sjekkPIN(9999) ? " Gyldig" : " Ugyldig"));
+			System.out.println("Test av kort " + kort.getKortNummer() + ",med kode 1234 er: " + (kort.sjekkPIN(1234) ? " Gyldig" : " Ugyldig"));
+			System.out.println("Test av kort " + kort.getKortNummer() + ",med kode 9999 er: " + (kort.sjekkPIN(9999) ? " Gyldig" : " Ugyldig"));
 			System.out.println("-------------------------------------------------");
 		}
 	}
