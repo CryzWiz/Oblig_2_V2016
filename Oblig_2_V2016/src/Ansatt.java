@@ -34,7 +34,7 @@ public class Ansatt extends Kort{
 			toStringOfficeHours();
 			return true;
 		}
-		else if(getPIN() == PIN && isSperret() == false){
+		else if(this.PIN == PIN && isSperret() == false){
 			return true;
 		}
 		else if(isSperret() == true){

@@ -1,10 +1,9 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Gjest extends  Kort{
+public class Gjest extends Kort{
 	private String Navn;
 	private final int PIN = 9999;
-	private int KortNummer;
 	private Calendar sperreDato;
 	private Calendar Opprettet;
 	private Calendar dagensDato;
@@ -12,7 +11,6 @@ public class Gjest extends  Kort{
 	public Gjest(String Navn, int PIN){
 		super(Navn, PIN);
 		this.Navn = Navn;
-		this.KortNummer = getKortNummer();
 		this.sperreDato = new GregorianCalendar();
 		sperreDato.add(Calendar.DAY_OF_MONTH, 7);
 		this.Opprettet = new GregorianCalendar();
@@ -21,8 +19,10 @@ public class Gjest extends  Kort{
 	
 	@Override
 	public String toString(){
-		return "Navn: " + Navn + "\nKortnr: " + KortNummer + "\nPIN: " + PIN + 
-				"\nOpprettet: " + Opprettet.getTime() + "\nDagens dato: " + dagensDato.getTime() + "\nSperredato: " + sperreDato.getTime();
+		return super.toString() + 
+				"\n----------------------------------------"
+				+ "\nOpprettet: " + Opprettet.getTime() + "\nSperredato: " + sperreDato.getTime() + 
+				"\n----------------------------------------";
 	}
 	public void toStringDato(){
 		System.out.println("Feilårsak: Sperret pga dato.");
@@ -39,12 +39,12 @@ public class Gjest extends  Kort{
 	@Override
 	public boolean sjekkPIN(int PIN) {
 		setDagensDato();
-		if(getPIN() == PIN && sperreDato.compareTo(dagensDato) < 0){
+		if(this.PIN == PIN && sperreDato.compareTo(dagensDato) < 0){
 			setSperretKort(true);
 			toStringDato();
 			return false;
 		}
-		else if(getPIN() != PIN && isSperret() == false){
+		else if(this.PIN != PIN && isSperret() == false){
 			toStringFeilPIN();
 			return false;
 		}
