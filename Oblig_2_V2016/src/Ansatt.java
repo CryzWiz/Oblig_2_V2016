@@ -8,6 +8,8 @@ public class Ansatt extends Kort implements Konstanter{
 	private String Fornavn;
 	private String Etternavn;
 	private String Fulltnavn;
+
+	
 	
 	public Ansatt(String Navn, int PIN){
 		super(Navn, PIN);
@@ -15,6 +17,7 @@ public class Ansatt extends Kort implements Konstanter{
 		this.PIN = PIN;
 		this.WhatHour = getHour();
 		settFulltNavn(this.Navn);
+
 	}
 	public int getHour(){
 		Calendar x = new GregorianCalendar();
@@ -34,6 +37,10 @@ public class Ansatt extends Kort implements Konstanter{
 		System.out.println("Kortet er sperret.");
 	}
 	@Override
+	public String toString(){
+		return super.toString();
+	}
+	@Override
 	public boolean sjekkPIN(int PIN) {
 		if(WhatHour <= 17 && WhatHour >= 7 && isSperret() == false){
 			toStringOfficeHours();
@@ -51,7 +58,7 @@ public class Ansatt extends Kort implements Konstanter{
 			return false;
 		}
 	}
-	//Fast - implements
+	//Konstanter - implements
 	public void settFornavn(String Fornavn) {
 		this.Fornavn = Fornavn;
 	}
@@ -69,16 +76,25 @@ public class Ansatt extends Kort implements Konstanter{
 	public void settFulltNavn(String navn) {
 		String[] x = navn.split(" ");
 		String Fnavn = "";
+		String Mnavn = "";
 		String Enavn = "";
-		Fnavn += x[0];
-		for(int i = 1; i < x.length; i++){
-			Enavn += x[i] + " ";
+		Fnavn += x[0] + " ";
+		Enavn += x[x.length-1];
+		for(int i = 1; i < x.length - 1; i++){
+			Mnavn += x[i] + " ";
 		}
+		Fulltnavn = Fnavn + Mnavn + Enavn;
 		settFornavn(Fnavn);
 		settEtternavn(Enavn);
 	}
 	public String hentFulltNavn() {
-		return Fornavn + " " + Etternavn;
+		return Fulltnavn;
+	}
+	public double beregnKreditt(){
+		return 2.0;
+	}
+	public double beregnBonus(){
+		return 2.0;
 	}
 }
 

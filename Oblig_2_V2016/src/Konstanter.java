@@ -10,5 +10,7 @@ public interface Konstanter {
 	public void settFulltNavn(String Fulltnavn);
 	public String hentFulltNavn();
 	
+	public double beregnKreditt();
+	public double beregnBonus();
 	
 }

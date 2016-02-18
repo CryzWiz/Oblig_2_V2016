@@ -1,14 +1,19 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public abstract class Kort {
 	private String Navn;
 	private int PIN;
 	private int KortNummer;
 	private boolean sperretKort;
+	protected Calendar Opprettet;
 
 	public Kort(String Navn, int PIN){
 		this.Navn = Navn;
 		this.PIN = PIN;
 		this.KortNummer = KortNummer();
 		this.sperretKort = false;	
+		this.Opprettet = new GregorianCalendar();
 	}
 	public String getNavn(){
 		return Navn;
@@ -29,7 +34,7 @@ public abstract class Kort {
 		return PIN;
 	}
 	public String toString(){
-		return "Navn: " + Navn + "\nKortnr: " + KortNummer + "\nPIN: " + PIN + "\nSperret: " + sperretKort;
+		return "Navn: " + Navn + "\nKortnr: " + KortNummer + "\nPIN: " + PIN + "\nSperret: " + sperretKort + "\nOpprettet: " + Opprettet.getTime();
 	}
 	public abstract boolean sjekkPIN(int PIN);
 }

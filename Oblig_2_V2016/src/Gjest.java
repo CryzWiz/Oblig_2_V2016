@@ -5,7 +5,6 @@ public class Gjest extends Kort{
 	private String Navn;
 	private final int PIN = 9999;
 	private Calendar sperreDato;
-	private Calendar Opprettet;
 	private Calendar dagensDato;
 	
 	public Gjest(String Navn, int PIN){
@@ -13,7 +12,6 @@ public class Gjest extends Kort{
 		this.Navn = Navn;
 		this.sperreDato = new GregorianCalendar();
 		sperreDato.add(Calendar.DAY_OF_MONTH, 7);
-		this.Opprettet = new GregorianCalendar();
 		this.dagensDato = new GregorianCalendar();
 	}
 	
@@ -21,7 +19,7 @@ public class Gjest extends Kort{
 	public String toString(){
 		return super.toString() + 
 				"\n----------------------------------------"
-				+ "\nOpprettet: " + Opprettet.getTime() + "\nSperredato: " + sperreDato.getTime() + 
+				+ "\nSperredato: " + sperreDato.getTime() + 
 				"\n----------------------------------------";
 	}
 	public void toStringDato(){
