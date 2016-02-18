@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Ansatt extends Kort implements Fast{
+public class Ansatt extends Kort implements Konstanter{
 	private String Navn;
 	private int PIN;
 	private int WhatHour;
