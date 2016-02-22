@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public abstract class Kort {
+public abstract class Kort implements Cloneable, Comparable<Kort>{
 	private String Navn;
 	private int PIN;
 	private int KortNummer;
@@ -37,5 +37,27 @@ public abstract class Kort {
 		return "Navn: " + Navn + "\nKortnr: " + KortNummer + "\nPIN: " + PIN + "\nSperret: " + sperretKort + "\nOpprettet: " + Opprettet.getTime();
 	}
 	public abstract boolean sjekkPIN(int PIN);
+	
+	// Version 0.4 implements
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+		
+	}
+	public int compareTo(Kort k){
+		String[] x = Navn.split(" ");
+		String[] y = k.Navn.split(" ");
+		int LastName = x[x.length -1].compareTo(y[y.length-1]);
+		int FirstName = x[0].compareTo(y[0]);
+		if(LastName != 0 || FirstName != 0){
+			return LastName + FirstName;
+		}
+		else{
+			return 0;
+		}	  		 
+	}
+	
+	
+
 }
+
 
