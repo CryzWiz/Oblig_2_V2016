@@ -39,9 +39,9 @@ public abstract class Kort implements Cloneable, Comparable<Kort>{
 	public abstract boolean sjekkPIN(int PIN);
 	
 	// Version 0.4 implements
+	@Override
 	public Object clone() throws CloneNotSupportedException{
-		return super.clone();
-		
+			return super.clone(); 
 	}
 	public int compareTo(Kort k){
 		String[] x = Navn.split(" ");

@@ -109,6 +109,7 @@ public class Ansatt extends Kort implements Konstanter{
 	public void setAnsiennitet(int ansiennitet) {
 		this.ansiennitet = ansiennitet;
 	}
+	
 }
 
 
