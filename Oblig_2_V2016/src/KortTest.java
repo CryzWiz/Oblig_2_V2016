@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+
 public class KortTest {
 	public static void main(String[] args){
 		ArrayList<Kort> reg = new ArrayList<Kort>();

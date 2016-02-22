@@ -8,9 +8,10 @@ public class Ansatt extends Kort implements Konstanter{
 	private String Fornavn;
 	private String Etternavn;
 	private String Fulltnavn;
+	private double timelonn;
+	private int ansiennitet;
 
-	
-	
+
 	public Ansatt(String Navn, int PIN){
 		super(Navn, PIN);
 		this.Navn = Navn;
@@ -31,7 +32,7 @@ public class Ansatt extends Kort implements Konstanter{
 		System.out.println("Ingen PIN nødvendig eller sjekkes da klokken er mellom 07 - 17.");
 	}
 	public void toStringFeilPIN(){
-		System.out.println("Feil PIN");
+		System.out.println("Feil PIN.");
 	}
 	public void toStringSperretKort(){
 		System.out.println("Kortet er sperret.");
@@ -91,11 +92,24 @@ public class Ansatt extends Kort implements Konstanter{
 		return Fulltnavn;
 	}
 	public double beregnKreditt(){
-		return 2.0;
+		return timelonn * KredittFaktor;
+	}
+	public double getTimelonn() {
+		return timelonn;
+	}
+	public void setTimelonn(double timelonn) {
+		this.timelonn = timelonn;
 	}
 	public double beregnBonus(){
-		return 2.0;
+		return ansiennitet * BonusFaktor;
 	}
+	public int getAnsiennitet() {
+		return ansiennitet;
+	}
+	public void setAnsiennitet(int ansiennitet) {
+		this.ansiennitet = ansiennitet;
+	}
+	
 }
 
 

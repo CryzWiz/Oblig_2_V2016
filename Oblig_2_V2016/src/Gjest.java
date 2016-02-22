@@ -26,7 +26,7 @@ public class Gjest extends Kort{
 		System.out.println("Feilårsak: Sperret pga dato.");
 	}
 	public void toStringFeilPIN(){
-		System.out.println("Feilårsak: Feil PIN");
+		System.out.println("Feilårsak: Feil PIN.");
 	}
 	public void toStringSperretKort(){
 		System.out.println("Feilårsak: Kortet er sperret.");
