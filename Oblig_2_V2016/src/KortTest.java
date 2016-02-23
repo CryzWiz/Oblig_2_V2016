@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class KortTest {
-	public static void main(String[] args) throws CloneNotSupportedException{
+	public static void main(String[] args){
 		ArrayList<Kort> reg = new ArrayList<Kort>();
 		Kort k1 = new Ansatt("Ole Olsen", 1234);
 		Kort k2 = new Gjest("Marit Olsen", 9999);

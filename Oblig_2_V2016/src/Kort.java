@@ -40,8 +40,13 @@ public abstract class Kort implements Cloneable, Comparable<Kort>{
 	
 	// Version 0.4 implements
 	@Override
-	public Object clone() throws CloneNotSupportedException{
-			return super.clone(); 
+	public Object clone(){
+			try {
+				return super.clone();
+			} 
+			catch (CloneNotSupportedException e) {
+				return "Ingen kloning er tillatt";
+			}
 	}
 	public int compareTo(Kort k){
 		String[] x = Navn.split(" ");

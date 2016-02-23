@@ -18,7 +18,6 @@ public class Ansatt extends Kort implements Konstanter{
 		this.PIN = PIN;
 		this.WhatHour = getHour();
 		settFulltNavn(this.Navn);
-
 	}
 	public int getHour(){
 		Calendar x = new GregorianCalendar();
@@ -39,7 +38,8 @@ public class Ansatt extends Kort implements Konstanter{
 	}
 	@Override
 	public String toString(){
-		return super.toString();
+		return super.toString() +
+				"\nBonus: " + beregnBonus() + "\nKreditt: " + beregnKreditt();
 	}
 	@Override
 	public boolean sjekkPIN(int PIN) {
