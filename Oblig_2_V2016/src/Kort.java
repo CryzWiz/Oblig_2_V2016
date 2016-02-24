@@ -1,6 +1,5 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 public abstract class Kort implements Cloneable, Comparable<Kort>{
 	private String Navn;
 	private int PIN;

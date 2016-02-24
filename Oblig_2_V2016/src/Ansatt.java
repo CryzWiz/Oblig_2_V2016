@@ -1,6 +1,5 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 public class Ansatt extends Kort implements Konstanter{
 	private String Navn;
 	private int PIN;
@@ -10,7 +9,6 @@ public class Ansatt extends Kort implements Konstanter{
 	private String Fulltnavn;
 	private double timelonn;
 	private int ansiennitet;
-
 
 	public Ansatt(String Navn, int PIN){
 		super(Navn, PIN);

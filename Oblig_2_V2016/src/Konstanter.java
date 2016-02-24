@@ -1,4 +1,3 @@
-
 public interface Konstanter {
 	
 	public void settFornavn(String Fornavn);

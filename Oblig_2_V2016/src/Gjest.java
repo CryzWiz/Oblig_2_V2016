@@ -1,6 +1,5 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 public class Gjest extends Kort{
 	private String Navn;
 	private final int PIN = 9999;
